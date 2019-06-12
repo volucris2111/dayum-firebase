@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+		jcenter()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE'
+        classpath 'com.android.tools.build:gradle:3.4.1'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'dayum-firebase'
+    version = '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+    google()
+	jcenter()
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation 'com.google.firebase:firebase-admin:6.8.1'
+    implementation 'org.json:json:20171018'
+    implementation 'com.fasterxml.jackson.core:jackson-core'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
